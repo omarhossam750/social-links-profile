@@ -1,0 +1,136 @@
+:root {
+  --main-bgcolor: #141414;
+  --main-color: #FFF;
+  --card-bgcolor: #1F1F1F;
+  --main-y-padding: 14px;
+  --card-border-radius: 12px;
+  --social-link-bgcolor: #2D2D2D;
+  --social-link-color: #FFF;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+main {
+  background: var(--main-bgcolor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.card {
+  background-color: var(--card-bgcolor);
+  color: var(--main-color);
+  border-radius: var(--card-border-radius);
+  padding: 16px 18px;
+  font-family: sans-serif;
+  border: 4px outset transparent;
+  animation: cardAnime 2s infinite alternate;
+}
+.profile-pic {
+  display: block;
+  width: 78px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.profile { 
+  text-align: center; 
+  padding: var(--main-y-padding) 0;
+}
+.profile .address { color: #cde96e; padding-top: 4px; }
+.profile .profession {
+  padding-top: var(--main-y-padding); 
+}
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--main-y-padding) / 2 + 2px)
+}
+.social-links a {
+  text-decoration: none;
+  color: var(--social-link-color);
+  background-color: var(--social-link-bgcolor);
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: var(--card-border-radius);
+  transition: 0.2s all ease-out;
+}
+.social-links a:hover {
+  background-color: dodgerblue;
+  transform: scale(1.05);
+}
+.social-links a:hover .card {
+  animation-play-state: paused!important;
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 290px) {
+  html {
+    font-size: 13px;
+  }
+  .profile-pic {
+    width: 64px;
+  }
+}
+@media (min-width: 1220px) {
+  html {
+    font-size: 20px;
+  }
+} 
+@media (min-width: 1440px) {
+  :root {
+    --main-y-padding: 24px;
+  }
+  .card {
+    padding: 22px 26px;
+  }
+  html {
+    font-size: 22px;
+  }
+  .profile-pic {
+    width: 98px;
+  }
+}
+@media (min-width: 1600px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+/* Bonus */
+@keyframes cardAnime {
+  0% {
+    border-top-color: #FF5733;    /* Top: Vivid Red-Orange */
+    border-right-color: #33FF57;  /* Right: Bright Green */
+    border-bottom-color: #3357FF;  /* Bottom: Bright Blue */
+    border-left-color: #FF33A1;    /* Left: Hot Pink */
+  }
+  33% {
+    border-top-color: #33FF57;     /* Top: Bright Green */
+    border-right-color: #3357FF;   /* Right: Bright Blue */
+    border-bottom-color: #FF33A1;   /* Bottom: Hot Pink */
+    border-left-color: #FF5733;     /* Left: Vivid Red-Orange */
+  }
+  66% {
+    border-top-color: #3357FF;     /* Top: Bright Blue */
+    border-right-color: #FF33A1;    /* Right: Hot Pink */
+    border-bottom-color: #FF5733;    /* Bottom: Vivid Red-Orange */
+    border-left-color: #33FF57;      /* Left: Bright Green */
+  }
+  100% {
+    border-top-color: #FF33A1;      /* Top: Hot Pink */
+    border-right-color: #FF5733;     /* Right: Vivid Red-Orange */
+    border-bottom-color: #33FF57;     /* Bottom: Bright Green */
+    border-left-color: #3357FF;       /* Left: Bright Blue */
+  }
+}
