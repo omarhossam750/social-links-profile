@@ -1,4 +1,4 @@
-Social Links Profile Component using Vanilla HTML & CSS
+# Social Links Profile Component using Vanilla HTML & CSS
 
 This is a Frontend Mentor Challenge to build a Responsive Social Links Profile Component using Vanilla HTML & CSS.
 
